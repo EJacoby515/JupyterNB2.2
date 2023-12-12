@@ -1,16 +1,17 @@
-# # F = (9/5)*C + 32
-# places = [('Nashua',32),("Boston",12),("Los Angelos",44),("Miami",29)]
+a_text = 'In computing, a hash table hash map is a data structure which implements an associative array abstract data type, a structure that can map keys to values. A hash table uses a hash function to compute an index into an array of buckets or slots from which the desired value can be found'
 
 
-# converted_temps = list(map(lambda place: (place[0], (9/5)*place[1] + 32), places))
-# print(converted_temps)
+words = a_text.lower()
 
-def fibonacci(i):
-    if i == 0:
-        return 0
-    elif i  == 1:
-        return 1
+
+sep_words = words.split()   
+
+word_num_pair = {}
+
+for word in sep_words:
+    if word in word_num_pair:
+        word_num_pair[word] += 1
     else:
-        return fibonacci(i-2) + fibonacci(i-1)
-for x in range(10):
-    print(fibonacci(x))
+        word_num_pair[word] = 1
+        
+print( word_num_pair)
